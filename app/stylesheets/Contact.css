@@ -1,0 +1,6 @@
+#contact-form{
+  position:absolute;
+  left:50%;
+  width:500px;
+  transform: translateX(-50%);
+}

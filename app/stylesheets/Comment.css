@@ -1,0 +1,18 @@
+.comment{
+  margin: 10px 0;
+}
+
+.username{
+  font-size: 14px;
+}
+
+.date{
+  margin-left: 10px;
+  font-size:12px;
+  color:gray;
+}
+
+.content{
+  margin-top: 5px;
+  width:100%;
+}

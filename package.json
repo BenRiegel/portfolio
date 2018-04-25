@@ -1,0 +1,36 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:server": "babel ./app/server -d build/server",
+    "build:watch:server": "babel ./app/server -d build/server --watch",
+    "build:client": "webpack --config ./webpack.config.js/",
+    "build:watch:client": "webpack --config ./webpack.config.js/ --watch",
+    "start:dev": "parallelshell 'npm run build:watch:server' 'npm run build:watch:client' 'nodemon ./build/server/index.js'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^6.2.1",
+    "body-parser": "^1.18.2",
+    "css-loader": "^0.28.11",
+    "express": "^4.16.3",
+    "fbemitter": "^2.1.1",
+    "firebase": "^4.12.1",
+    "flux": "^3.1.3",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-router-dom": "^4.2.2",
+    "showdown": "^1.8.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "css-loader": "^0.28.11",
+    "nodemon": "^1.17.3",
+    "parallelshell": "^3.0.2",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.6.0"
+  }
+}

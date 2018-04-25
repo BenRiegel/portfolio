@@ -1,0 +1,14 @@
+#comment-section{
+  width: 800px;
+  margin:auto;
+  padding-top: 25px;
+}
+
+#comment-section h4{
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+#comments-div{
+  margin-top: 50px;
+}

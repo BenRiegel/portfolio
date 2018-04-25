@@ -1,0 +1,26 @@
+.nav {
+  composes: clearfix from "./Index.css";
+  float: right;
+  height: 100%;
+  margin-right: 100px;
+  font-family: 'Lato', sans-serif;
+}
+
+.nav div{
+  float: left;
+  margin: 27.5px 15px;
+  line-height: 25px;
+  height: 25px;
+  text-align: center;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.nav a{
+  text-decoration: none;
+  color:white;
+}
+
+.nav div.selected {
+  border-bottom: 2px solid #f9cf00;
+}

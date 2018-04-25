@@ -1,0 +1,20 @@
+.row{
+  margin-top:15px;
+  margin-bottom: 15px;
+}
+
+.required-fields-text {
+  color: red;
+  font-size: 14px;
+}
+
+.submit-button {
+  width:auto;
+  font-size: 12px;
+  height:30px;
+  background-color: #328CC1;
+  color:white;
+  border:0;
+  padding: 0 10px;
+  border-radius: 5px;
+}
