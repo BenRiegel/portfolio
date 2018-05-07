@@ -10,20 +10,4 @@ var config = {
 };
 firebase.initializeApp(config);
 
-
-
-var convertObjToArray = function(obj){
-  if (obj === null){
-    return [];
-  }
-  var newArray = [];
-  var keys = Object.keys(obj);
-  keys.forEach(function(key){
-    var value = obj[key];
-    value.key = key;
-    newArray.push(value);
-  });
-  return newArray;
-}
-
-export {firebase, convertObjToArray};
+export default firebase;

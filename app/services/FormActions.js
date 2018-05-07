@@ -1,12 +1,26 @@
 import Dispatcher from './Dispatcher';
 
 
+//get rid of class here
 class FormActions {
 
   submit() {
-        // Note: This is usually a good place to do API calls.
     Dispatcher.dispatch({
-      actionType: "SUBMIT",
+      actionType: "SUBMIT_REQUEST",
+    });
+  }
+
+  fieldUpdated(fieldInfo) {
+    Dispatcher.dispatch({
+      actionType: "FIELD_UPDATED",
+      payload: fieldInfo,
+    });
+  }
+
+  successfulSubmit() {
+    console.log("hereasdfasdf");
+    Dispatcher.dispatch({
+      actionType: "SUCCESSFUL_SUBMIT",
     });
   }
 

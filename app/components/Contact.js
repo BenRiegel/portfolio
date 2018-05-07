@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Form from './Form';
+import FormStore from '../services/FormStore';
 import styles from '../stylesheets/Contact.css';
 
 
@@ -25,27 +26,10 @@ function readResponseAsJSON(response) {
 
 class Contact extends Component {
 
-  formSubmitHandler(e, fieldData){
-    e.preventDefault();
-
-    var data = {};
-    for(var name in fieldData) {
-      data[name] = fieldData[name].value;
-    }
-
-    fetch("http://localhost:8080/contact", {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: new Headers({ "Content-Type": "application/json" })
-    }).then(validateResponse)
-      .then(readResponseAsJSON)
-      .then(logResult)
-      .catch(logError);
-  };
-
-  render() {
-    const formComponents = {
-      "inputRows": [
+  constructor (props) {
+    super(props);
+    this.formComponents = {
+      "fields": [
         {type:"text", name:"name", label:"Name", required:true},
         {type:"email", name:"email", label:"Email", required:true},
         {type:"text", name:"subject", label:"Subject", required:false},
@@ -53,13 +37,36 @@ class Contact extends Component {
       ],
       "submitButton": {text:"Send Message"}
     };
+    this.submitValidHandlerRef = null;
+  }
 
+  componentDidMount() {
+    this.submitValidHandlerRef = FormStore.addListener("FORM_VALID_ON_SUBMISSION", (fieldData) => {
+      var data = {};
+      for(var name in fieldData) {
+        data[name] = fieldData[name].value;
+      }
+      fetch("http://localhost:8080/contact", {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: new Headers({ "Content-Type": "application/json" })
+      }).then(validateResponse)
+        .then(readResponseAsJSON)
+        .then(logResult)
+        .catch(logError);
+    });
+  }
+
+  componentWillUnmount() {
+    this.submitValidHandlerRef.remove();
+  }
+
+  render() {
     return (
       <div>
-        <h2>Send Me a Message!</h2>
-        <Form id={styles["contact-form"]}
-              formComponents={formComponents}
-              onSubmit={this.formSubmitHandler}>
+        <h2>Send Me a Message</h2>
+        <Form className={styles["contact-form"]}
+              formComponents={this.formComponents}>
         </Form>
       </div>
     );

@@ -1,0 +1,59 @@
+@import 'Vars';
+
+.logo-container{
+  position:absolute;
+  left: $logo-left-margin;
+  top: 50%;
+  transform: translate(0, -50%);
+  height: $logo-height;
+  font-family: 'Lato', sans-serif;
+}
+
+.logo{
+  position: relative;
+  float: left;
+  width: $logo-height;
+  height: $logo-height;
+}
+
+.logo-layer{
+  position:absolute;
+  top:7px;
+  left:6px;
+  width:28px;
+  height:28px;
+  background-color: $theme-color-yellow;
+  transform: rotateX(70deg) rotateZ(45deg);
+  z-index: 2;
+}
+
+.logo-layer:first-child{
+  top:-1px;
+  background-color: $theme-color-dark-blue;
+  z-index: 3;
+}
+
+.logo-layer:last-child{
+  top:15px;
+  background-color: $theme-color-white;
+  z-index: 1;
+}
+
+.title-container{
+  float:right;
+  color:white;
+  margin-left:10px;
+  font-size:14px;
+}
+
+.name{
+  text-transform: uppercase;
+  font-size: 16px;
+  height: ($logo-height / 2);
+  line-height: ($logo-height / 2);
+}
+
+.title{
+  height: ($logo-height / 2);
+  line-height: ($logo-height / 2);
+}

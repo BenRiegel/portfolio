@@ -1,0 +1,16 @@
+.label {
+  display:block;
+  height: 26px;
+  line-height: 26px;
+  font-size: 14px;
+}
+
+.required-ast, .errors {
+  color: red;
+  font-size: 14px;
+}
+
+.errors{
+  margin-top:5px;
+  margin-bottom:15px;
+}

@@ -7,8 +7,7 @@ import Blog from './Blog.js';
 import BlogPost from './BlogPost.js';
 import About from './About.js';
 import Contact from './Contact.js';
-import ThankYou from './ThankYou.js';
-import styles from '../stylesheets/App.css';
+import styles from '../stylesheets/App.scss';
 
 class App extends Component {
 
@@ -27,7 +26,6 @@ class App extends Component {
               <Route path="/blog/:postId" component={BlogPost} />
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
-              <Route path="/thank-you" component={ThankYou} />
             </Switch>
           </main>
         </div>

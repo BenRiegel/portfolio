@@ -18,7 +18,7 @@ module.exports = {
         use: ['babel-loader']
       },
       {
-        test: /\.css$/,
+        test:/\.(s*)css$/,
         use: [
           require.resolve('style-loader'),
           {
@@ -28,6 +28,7 @@ module.exports = {
               localIdentName: "[name]__[local]___[hash:base64:5]"
             },
           },
+          require.resolve('sass-loader'),
         ]
       }
     ]

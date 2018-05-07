@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
-import styles from '../stylesheets/NavMenu.css';
+import styles from '../stylesheets/NavMenu.scss';
 
 
 class NavMenu extends Component {

@@ -1,0 +1,15 @@
+@import 'Vars';
+
+.header{
+  position: relative;
+  height: $banner-height;
+  background-color: $theme-color-light-blue;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.75);
+  font-family: 'Lato', sans-serif;
+}
+
+.main h2{
+  margin-top: 20px;
+  color: black;
+  text-align: center;
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import styles from '../stylesheets/Logo.css';
+import styles from '../stylesheets/Logo.scss';
 
 class Logo extends Component {
   render() {
@@ -14,7 +14,7 @@ class Logo extends Component {
           </div>
           <div className={styles["title-container"]}>
             <div className={styles.name}>Ben Riegel</div>
-            <div className={styles.title}>Front-End Developer & JavaScript Engineer</div>
+            <div className={styles.title}>Full-Stack Developer & JavaScript Engineer</div>
           </div>
         </Link>
       </div>

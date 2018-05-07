@@ -1,3 +1,5 @@
+@import 'Vars';
+
 .row{
   margin-top:15px;
   margin-bottom: 15px;
@@ -12,9 +14,9 @@
   width:auto;
   font-size: 12px;
   height:30px;
-  background-color: #328CC1;
+  background-color: $theme-color-light-blue;
   color:white;
   border:0;
   padding: 0 10px;
-  border-radius: 5px;
+  border-radius: 7.5px;
 }
