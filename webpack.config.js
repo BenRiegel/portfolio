@@ -3,8 +3,9 @@ var webpath = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   devtool: 'eval-source-map',
-  entry: './app/index.js',
+  entry: ['babel-polyfill', './app/index.js'],
   output: {
     path: path.join(__dirname, 'build'),
     publicPath: '/',

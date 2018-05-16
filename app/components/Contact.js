@@ -1,72 +1,85 @@
 import React, { Component } from 'react';
 import Form from './Form';
-import FormStore from '../services/FormStore';
-import styles from '../stylesheets/Contact.css';
+import FormActions from '../services/actions/FormActions';
+import styles from '../stylesheets/Contact.scss';
 
 
-function logResult(result) {
-  console.log(result);
-}
+//------------------------------------------------------------------------------
 
-function logError(error) {
-  console.log('Looks like there was a problem: \n', error);
-}
+const FORM_COMPONENTS = {
+  "fields": [
+    {type:"text", name:"name", label:"Name", required:true, defaultValue:""},
+    {type:"email", name:"email", label:"Email", required:true, defaultValue:""},
+    {type:"text", name:"subject", label:"Subject", required:false, defaultValue:""},
+    {type:"textarea", name:"message", label:"Message", required:true, defaultValue:""}
+  ],
+  "submitButton": {text:"Send Message"},
+};
 
-function validateResponse(response) {
-  if (!response.ok) {
-    throw Error(response.statusText);
-  }
-  return response;
-}
 
-function readResponseAsJSON(response) {
-  return response.json();
-}
-
+//------------------------------------------------------------------------------
 
 class Contact extends Component {
 
-  constructor (props) {
-    super(props);
-    this.formComponents = {
-      "fields": [
-        {type:"text", name:"name", label:"Name", required:true},
-        {type:"email", name:"email", label:"Email", required:true},
-        {type:"text", name:"subject", label:"Subject", required:false},
-        {type:"textarea", name:"message", label:"Message",required:true}
-      ],
-      "submitButton": {text:"Send Message"}
-    };
-    this.submitValidHandlerRef = null;
-  }
-
-  componentDidMount() {
-    this.submitValidHandlerRef = FormStore.addListener("FORM_VALID_ON_SUBMISSION", (fieldData) => {
-      var data = {};
-      for(var name in fieldData) {
-        data[name] = fieldData[name].value;
+  async submitFunction(data){
+    const MIN_WAIT_TIME = 1000;
+    var options = {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: new Headers({ "Content-Type": "application/json" }),
+    }
+    var startTimeStamp = new Date().getTime();
+    const response = await fetch('http://localhost:8080/contact', options);
+    var endTimeStamp = new Date().getTime();
+    var timeDiff = endTimeStamp - startTimeStamp;
+    var pauseLength = Math.max(0, MIN_WAIT_TIME - timeDiff);
+    setTimeout( ()=>{
+      if (response.ok){
+        FormActions.formSubmissionSuccess();
+      } else {
+        FormActions.formSubmissionFailure();
       }
-      fetch("http://localhost:8080/contact", {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: new Headers({ "Content-Type": "application/json" })
-      }).then(validateResponse)
-        .then(readResponseAsJSON)
-        .then(logResult)
-        .catch(logError);
-    });
+    }, pauseLength);
   }
 
-  componentWillUnmount() {
-    this.submitValidHandlerRef.remove();
+  clickHandler(evt){
+    FormActions.resetting();
   }
+
+  renderSuccessPage(){
+    return (
+      <div>
+        Success!
+        <button className={styles.button}
+                onClick={()=>this.clickHandler()}>
+          OK
+        </button>
+      </div>
+    );
+  }
+
+  renderFailurePage(){
+    return(
+      <div>
+        Oops!
+        <button className={styles.button}
+                onClick={()=>this.clickHandler()}>
+          Try Again
+        </button>
+      </div>
+    );
+  }
+//    <FormField type="text" name="email" label="Email" required={false}/>
 
   render() {
     return (
       <div>
         <h2>Send Me a Message</h2>
         <Form className={styles["contact-form"]}
-              formComponents={this.formComponents}>
+              formComponents={FORM_COMPONENTS}
+              submitFunction={(data) => this.submitFunction(data)}
+              successComponent={this.renderSuccessPage()}
+              failureComponent={this.renderFailurePage()}>
         </Form>
       </div>
     );

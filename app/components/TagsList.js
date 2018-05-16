@@ -1,32 +1,39 @@
 import React, { Component } from 'react';
-import styles from '../stylesheets/Blog.scss';
+import BlogActions from '../services/actions/BlogActions.js';
+import styles from '../stylesheets/TagList.scss';
 
 
 class TagsList extends Component {
 
   constructor(props){
     super(props);
-    this.tagsList = ["JavaScript", "Web Maps"];
+    //this.tagsList = ["JavaScript", "Web Maps"];
+  }
+
+  handleClick(evt){
+    var tagName = evt.target.dataset.id;
+    BlogActions.updateFilter(tagName);
   }
 
   renderTag(index, tag){
     var count = (tag in this.props.tags) ? this.props.tags[tag] : 0;
-  //  var count = 0;
     return (
-      <div key={index}>
+      <div className={styles.tag}
+           key={index}
+           data-id={tag}
+           onClick={(evt)=>this.handleClick(evt)}>
         {tag} ({count})
       </div>
     );
   }
 
   render() {
-    console.log(this.props);
     return (
       <div>
          Filter By Tag
-        { this.tagsList.map( (tag, index) =>
-          this.renderTag(index, tag)
-        )}
+         { this.props.tagsList.map( (tag, index) =>
+           this.renderTag(index, tag) )
+         }
       </div>
     );
   }

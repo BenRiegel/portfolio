@@ -1,0 +1,12 @@
+@import 'Vars';
+
+
+
+.blog-section:first-child{
+  float:left;
+  width: 115px;
+  border-bottom: 2px solid gray;
+  font-size: 16px;
+  color: gray;
+  padding: 5px 0;
+}

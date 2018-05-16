@@ -1,0 +1,55 @@
+.wait-container{
+  position: absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  opacity: 1;
+  background-color: rgba(255,255,255,0.75);
+}
+
+.stack-container{
+  position: relative;
+  top:40%;
+  left:50%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+}
+
+.layer{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width: 50%;
+  height: 50%;
+/*  background-color: #666666;*/
+  background: linear-gradient(#666666, #999999);
+  border-radius: 10px;
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 2;
+}
+
+.layer:first-child{
+  top: 40%;
+/*  background-color: #666666;*/
+  z-index: 3;
+}
+
+.layer:last-child{
+  top: 60%;
+/*  background-color: #666666;*/
+  z-index: 1;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotateX(70deg) rotateZ(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotateX(70deg) rotateZ(360deg);
+  }
+}

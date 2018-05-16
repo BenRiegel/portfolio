@@ -1,10 +1,18 @@
+.blog-post-container{
+  position:relative;
+  top:0;
+  bottom:0;
+  height:100%;
+
+}
+
 .post{
   composes: clearfix from "./Index.css";
   width: 800px;
   margin:auto;
   margin-top: 25px;
   padding-bottom:50px;
-  border-bottom: 1px solid gray;
+/*  border-bottom: 1px solid gray;*/
 }
 
 .title{

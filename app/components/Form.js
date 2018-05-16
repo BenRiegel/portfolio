@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import FormField from './FormField';
-import FormActions from '../services/FormActions';
-import FormStore from '../services/FormStore';
+import FormActions from '../services/actions/FormActions';
+import FormStore from '../services/stores/FormStore';
+import NewAnimation from '../services/Animation';
+import Wait from './Wait';
 import styles from '../stylesheets/Form.scss';
 
 
@@ -9,31 +11,41 @@ class Form extends Component {
 
   constructor (props) {
     super(props);
-    this.state = {
-      submitFailed: false,
-    }
-    this.hasRequiredFields = FormStore.init(props.formComponents.fields);
-    this.submitFailedHandlerRef = null;
+    this.state = FormStore.initState(props.formComponents.fields);
   }
 
   componentDidMount() {
-    this.submitFailedHandlerRef = FormStore.addListener("FORM_INVALID_ON_SUBMISSION", () => {
-      this.setState({submitFailed: true});
+    FormStore.addListener(this, () => {
+      var newState = FormStore.getState();
+      this.setState(newState, ()=>{
+        if (this.state.resetting){
+          this.animateFadeDown();
+        }
+      });
     });
   }
 
   componentWillUnmount() {
-    this.submitFailedHandlerRef.remove();
+    FormStore.removeListener(this);
+  }
+
+  async animateFadeDown(){
+    await NewAnimation(1500, (totalProgress)=> {
+      this.finishedContainer.style.opacity = `${1 - totalProgress}`;
+    });
+    FormActions.done();
   }
 
   renderFormField(component, index){
     return (
       <div className={styles.row} key={index}>
         <FormField type={component.type}
-                   name={component.name}
                    label={component.label}
                    required={component.required}
-                   submitFailed={this.state.submitFailed}
+                   value={component.value}
+                   errors={component.errors}
+                   showErrors={this.state.showErrors}
+                   index={index}
         />
       </div>
     );
@@ -46,7 +58,7 @@ class Form extends Component {
   }
 
   renderRequiredFieldsText(){
-    if (this.hasRequiredFields){
+    if (this.state.hasRequiredFields){
       return (
         <div className={styles["required-fields-text"]}>
           * Field Required
@@ -60,26 +72,69 @@ class Form extends Component {
       <div className={styles.row}>
         <input className = {styles["submit-button"]}
                type='submit'
+               ref="submitButton"
                value={this.props.formComponents.submitButton.text}
         />
       </div>
     );
   }
 
+  renderWaitingAnimation(){
+    if (this.state.submitStatus == "waiting"){
+      return (
+        <Wait />
+      );
+    }
+  }
+
+  renderSubmitSuccessPage(){
+    if (this.state.submitStatus == "success"){
+      return (
+        <div className={styles["finished-container"]}
+             ref={ (node) => this.finishedContainer = node}>
+          {this.props.successComponent}
+        </div>
+      );
+    }
+  }
+
+  renderSubmitFailurePage(){
+    if (this.state.submitStatus == "failure"){
+      return (
+        <div className={styles["finished-container"]}
+             ref={ (node) => this.finishedContainer = node}>
+          {this.props.failureComponent}
+        </div>
+      );
+    }
+  }
+
   onSubmit(e){
     e.preventDefault();
-    FormActions.submit();
+    this.refs.submitButton.blur();
+    if (this.state.formValid){
+      FormActions.submitValidForm();
+      var data = {};
+      this.state.fields.forEach( (field) => {
+        data[field.name] = field.value;
+      });
+      this.props.submitFunction(data);    //not sure about this one
+    } else {
+      FormActions.submitInvalidForm();
+    }
   }
 
   render() {
     return (
-      <div>
-        <form className={this.props.className}
-               onSubmit={(evt) => this.onSubmit(evt)}>
+      <div className={this.props.className + " " + styles["form-container"]} >
+        <form ref="form" onSubmit={(evt) => this.onSubmit(evt)}>
           {this.renderFormFields()}
           {this.renderRequiredFieldsText()}
           {this.renderSubmitButton()}
         </form>
+        {this.renderWaitingAnimation()}
+        {this.renderSubmitSuccessPage()}
+        {this.renderSubmitFailurePage()}
       </div>
     );
   }

@@ -1,31 +1,12 @@
 import React, { Component } from 'react';
-import UserInput from './UserInput';
-import FormStore from '../services/FormStore';
+import FormActions from '../services/actions/FormActions';
 import styles from '../stylesheets/FormField.css';
 
 
 class FormField extends Component {
 
-  constructor (props) {
-    super(props);
-    this.state = {
-      validation: {
-        valid: !props.required,
-        errors: null
-      }
-    }
-    this.validationHandlerRef = null;
-  }
-
-  componentDidMount() {
-    var eventName = this.props.name + "UpdatedValidation";
-    this.validationHandlerRef = FormStore.addListener(eventName, (validationInfo) => {
-      this.setState({validation: validationInfo});
-    });
-  }
-
-  componentWillUnmount() {
-    this.validationHandlerRef.remove();
+  handleUserInput(evt){
+    FormActions.fieldUpdated(evt.target.dataset.index, evt.target.value);
   }
 
   renderAsterisk() {
@@ -44,12 +25,49 @@ class FormField extends Component {
     );
   }
 
+  renderTextArea() {
+    return (
+      <textarea className={styles.textarea}
+                data-index={this.props.index}
+                value={this.props.value}
+                onChange={this.handleUserInput}
+      />
+    );
+  }
+
+  renderTextInput() {
+    return (
+      <input className={styles.input}
+             type={this.props.type}
+             data-index={this.props.index}
+             value={this.props.value}
+             onChange={this.handleUserInput}
+      />
+    );
+  }
+
+  renderUserInput() {
+    if (this.props.type === "textarea"){
+      return this.renderTextArea();
+    } else {
+      return this.renderTextInput();
+    }
+  }
+
+  renderError(message, i){
+    return (
+      <div className={styles.errors} key={i}>{message}</div>
+    );
+  }
+
   renderErrors(){
-    if (this.props.submitFailed && !this.state.validation.valid){
-      //refactor this for multiple errors
-      return (
-        <div className={styles.errors}>Please enter a valid {this.props.name}</div>
-      );
+    var errorMessages = [];
+    if (this.props.showErrors){
+      this.props.errors.forEach( (error, i) => {
+        var errorMessage = this.renderError(error, i);
+        errorMessages.push(errorMessage);
+      });
+      return errorMessages;
     }
   }
 
@@ -57,9 +75,7 @@ class FormField extends Component {
     return (
       <div>
         {this.renderLabel()}
-        <UserInput type={this.props.type}
-                   name={this.props.name}
-                   required={this.props.required}/>
+        {this.renderUserInput()}
         {this.renderErrors()}
       </div>
     );

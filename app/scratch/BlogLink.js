@@ -7,8 +7,8 @@ class BlogLink extends Component {
 
   renderTag(index, tag){
     return (
-      <div className={styles.tag}>
-        <i className="fas fa-tag" key={index}></i><span> {tag}</span>
+      <div className={styles.tag} key={index}>
+        <i className="fas fa-tag"></i><span> {tag}</span>
       </div>
     );
   }
@@ -16,11 +16,9 @@ class BlogLink extends Component {
   render() {
     return (
       <div className={styles["blog-link"]}>
-
         <Link className={styles.title} to={this.props.post.id}>
           {this.props.post.title}
         </Link>
-
         <div className={styles["info-div"]}>
           <span>{this.props.post.datePublished}</span>
           <span>By Ben Riegel</span>
@@ -32,9 +30,7 @@ class BlogLink extends Component {
         <div className={styles["post-summary"]}>
           {this.props.post.summary}
         </div>
-
         <Link className={styles["read-more-link"]} to={this.props.post.id}>Read More »</Link>
-
       </div>
     );
   }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import mdConvertor from '../services/Showdown.js';
-import DatabaseStore from '../services/DatabaseStore.js';
-import DatabaseActions from '../services/DatabaseActions.js';
 import CommentSection from './CommentSection.js';
+import Wait from './Wait';
+import BlogPostStore from '../services/stores/BlogPostStore.js';
+import BlogPostActions from '../services/actions/BlogPostActions.js';
 import styles from '../stylesheets/BlogPost.css';
 
 
@@ -10,17 +10,66 @@ class BlogPost extends Component {
 
   constructor(props){
     super(props);
-    this.state = {
-      postLoaded: false,
-      author: "",
-      datePublished: "",
-      title: "",
-      content: "",
-    }
-    this.postInfoListener = null;
+    this.state = BlogPostStore.initState();
+    BlogPostActions.requestPostInfo(props.match.params.postId);
   }
 
-  loadPost(post){
+  componentDidMount() {
+    BlogPostStore.addListener(this, () => {
+      var newState = BlogPostStore.getState();
+      this.setState(newState);
+    });
+  }
+
+  componentWillUnmount() {
+    BlogPostStore.removeListener(this);
+  }
+
+  renderWaitingAnimation(){
+    if (this.state.loadingStatus == "loading"){
+      return (
+        <Wait />
+      );
+    }
+  }
+
+  renderBlogPostInfo(){
+    //do something about dangerouslySetInnerHTML?
+    if (this.state.loadingStatus == "done"){
+      return (
+        <section className={styles.post}>
+          <div className={styles.title}>{this.state.postInfo.title}</div>
+          <article className={styles.content} dangerouslySetInnerHTML={{__html: this.state.postInfo.html}}></article>
+        </section>
+      );
+    }
+  }
+
+  render() {
+    return (
+      <div className={styles["blog-post-container"]}>
+        {this.renderBlogPostInfo()}
+        {this.renderWaitingAnimation()}
+      </div>
+    );
+  }
+}
+
+//<CommentSection postId = {this.props.match.params.postId}/>
+
+export default BlogPost;
+
+
+
+
+
+
+//    <div className={styles.info}>
+//      <div className={styles.author}>{this.state.author}</div>
+//      <div className={styles["date-published"]}>{this.state.datePublished}</div>
+  //  </div>
+
+/*  loadPost(post){
     var fn = `/blog_posts/${post.fileName}`;
     fetch(fn).then( (response) => {
       response.text().then( (data) => {
@@ -35,40 +84,14 @@ class BlogPost extends Component {
         });
       });
     });
-  }
+  }*/
 
-  componentDidMount() {
+/*  componentDidMount() {
     var postId = this.props.match.params.postId;
-    this.postInfoListener = DatabaseStore.addPostInfoListener((postInfo) => this.loadPost(postInfo));
-    DatabaseActions.requestPostInfo(postId);
+    this.postInfoListener = BlogStore.addPostInfoListener((postInfo) => this.loadPost(postInfo));
+    BlogActions.requestPostInfo(postId);
   }
 
   componentWillUnmount() {
     this.postInfoListener.remove();
-  }
-
-  render() {
-    console.log("blog post rendering");
-    //do something about dangerouslySetInnerHTML
-    if (this.state.postLoaded === false){
-      return null;
-    }
-//    <div className={styles.info}>
-//      <div className={styles.author}>{this.state.author}</div>
-//      <div className={styles["date-published"]}>{this.state.datePublished}</div>
-  //  </div>
-
-
-    return (
-      <div>
-        <section className={styles.post}>
-          <div className={styles.title}>{this.state.title}</div>
-          <article className={styles.content} dangerouslySetInnerHTML={{__html: this.state.content}}></article>
-        </section>
-        <CommentSection postId = {this.props.match.params.postId}/>
-      </div>
-    );
-  }
-}
-
-export default BlogPost;
+  }*/

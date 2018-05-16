@@ -14,6 +14,7 @@
   float: left;
   width: $logo-height;
   height: $logo-height;
+  border: 0px solid $theme-color-yellow;
 }
 
 .logo-layer{
@@ -23,19 +24,24 @@
   width:28px;
   height:28px;
   background-color: $theme-color-yellow;
+  background: linear-gradient(to bottom right, #777, #ddd);
+
+  border-radius: 1px;
   transform: rotateX(70deg) rotateZ(45deg);
   z-index: 2;
 }
 
 .logo-layer:first-child{
   top:-1px;
-  background-color: $theme-color-dark-blue;
+/*  background-color: $theme-color-dark-blue;
+  background: linear-gradient(#666666, #999999);*/
   z-index: 3;
 }
 
 .logo-layer:last-child{
   top:15px;
-  background-color: $theme-color-white;
+/*  background-color: $theme-color-white;
+  background: linear-gradient(#666666, #999999);*/
   z-index: 1;
 }
 
