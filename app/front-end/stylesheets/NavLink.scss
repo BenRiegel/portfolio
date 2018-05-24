@@ -1,0 +1,23 @@
+@import 'Vars.scss';
+
+.nav-link{
+  display: inline-block;
+  position: relative;
+  margin: 6px 0;        /*prob don't need both */
+  padding: 5px 50px;
+  font-size: 12px;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav-link.selected::after {
+  content: " ";
+  position: absolute;
+  left:50%;
+  top: 28px;
+  width: 27px;
+  height: 27px;
+  background-color: white;
+  transform: translate(-50%, 0%) rotateY(30deg) rotateZ(45deg);
+}

@@ -1,0 +1,12 @@
+@import 'Vars';
+
+.submit-button {
+  width:auto;
+  height:30px;
+  padding: 0 10px;
+  background-color: $theme-color-light-blue;
+  color:white;
+  font-size: 12px;
+  border:0;
+  border-radius: 5px;
+}

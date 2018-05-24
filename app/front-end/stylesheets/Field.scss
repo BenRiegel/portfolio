@@ -1,0 +1,13 @@
+@import 'Vars.scss';
+
+.asterisk, .errors {
+  color: $required-text-color;
+}
+
+.errors{
+  margin-top:5px;
+}
+
+.label{
+  margin-bottom: 5px;
+}

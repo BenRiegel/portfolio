@@ -5,7 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
   devtool: 'eval-source-map',
-  entry: ['babel-polyfill', './app/index.js'],
+  entry: ['babel-polyfill', './app/front-end/index.js'],
   output: {
     path: path.join(__dirname, 'build'),
     publicPath: '/',
@@ -39,7 +39,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './app/public/index.html',
+      template: './app/front-end/index.html',
       filename: 'index.html',
       inject: 'body',
     }),

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:server": "babel ./app/server -d build/server",
-    "build:watch:server": "babel ./app/server -d build/server --watch",
+    "build:server": "babel ./app/back-end -d build/server",
+    "build:watch:server": "babel ./app/back-end -d build/server --watch",
     "build:client": "webpack --config ./webpack.config.js/",
     "build:watch:client": "webpack --config ./webpack.config.js/ --watch",
     "start:dev": "parallelshell 'npm run build:watch:server' 'npm run build:watch:client' 'nodemon ./build/server/index.js'"

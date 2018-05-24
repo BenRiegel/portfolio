@@ -1,0 +1,88 @@
+@import 'Vars.scss';
+
+
+.formSectionContainer{
+  float:right;
+  width:50%;
+}
+
+.socialMediaContainer{
+  float:left;
+  width:50%;
+}
+
+.subTitle{
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-bottom: 10px;
+}
+
+.formContainer{
+  position:relative;
+}
+
+.finishedPage{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: white;
+  z-index: 2;
+  text-align: center;
+  border:1px solid #bbb;
+  border-radius:5px;
+}
+
+.contactForm{
+  font-size: 14px;
+  width: 350px;
+  margin:auto;
+}
+
+
+.button{
+  width:auto;
+  font-size: 12px;
+  height:30px;
+  background-color: $theme-color-light-blue;
+  color:white;
+  border:0;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+
+
+.textInput, .textAreaInput{
+  width:100%;
+  border-radius:5px;
+  box-sizing: border-box;
+  border:1px solid rgba(0,0,0,0.35);
+  box-shadow: inset 0px 0px 3px rgba(0,0,0,0.35);
+}
+
+.textInput{
+  height:26px;
+  line-height: 26px;
+  padding: 0 5px;
+}
+
+.textAreaInput{
+  height:130px;
+  padding: 5px;
+  resize: none;
+}
+
+.submitButton{
+  width:auto;
+  height:32px;
+  padding: 0 10px;
+  background-color: $theme-color-light-blue;
+  color:white;
+  font-size: 12px;
+  border:0;
+  border-radius: 5px;
+}

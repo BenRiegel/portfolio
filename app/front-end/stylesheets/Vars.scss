@@ -1,0 +1,30 @@
+
+
+
+
+/*$logo-height: 45px;
+$logo-left-margin: 30px;*/
+
+$required-text-color: red;
+
+$background-color: #f5f5f5;  /* not needed remove this eventually */
+
+$theme-color-light-blue: #328CC1;  /*decide on one of these */
+$theme-color-light-blue: #336699;
+
+$theme-color-dark-blue: #053054;  /*not sure which ones are necessary*/
+$theme-color-yellow: #f9cf00;
+$theme-color-white: #ffffff;
+
+
+
+
+@mixin clearfix {
+  &:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+  }
+}

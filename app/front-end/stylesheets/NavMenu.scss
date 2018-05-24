@@ -1,0 +1,9 @@
+@import 'Vars.scss';
+
+.nav{
+  position: relative;
+  background-color: #262f3d;
+  background-color: $theme-color-dark-blue;
+  text-align: center;
+  overflow: hide;
+}
