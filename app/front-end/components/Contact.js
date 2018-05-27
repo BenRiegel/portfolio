@@ -11,7 +11,6 @@ import {wait} from '../services/Utils';
 import styles from '../stylesheets/Contact.scss';
 
 
-
 //------------------------------------------------------------------------------
 
 class Contact extends Component {

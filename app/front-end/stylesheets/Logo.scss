@@ -30,7 +30,7 @@
   height: 34px;
 }
 
-.logo-layer{
+.logoLayer{
   position:absolute;
   top:2px;
   left:6px;
@@ -41,12 +41,12 @@
   z-index: 2;
 }
 
-.logo-layer:first-child{
+.logoLayer:first-child{
   top:-6px;
   z-index: 3;
 }
 
-.logo-layer:last-child{
+.logoLayer:last-child{
   top:10px;
   z-index: 1;
 }

@@ -35,7 +35,7 @@ class BlogPost extends Component {
   renderWaitingAnimation(){
     if (!this.state.postInfoLoaded){
       return (
-        <div className={styles['wait-container']}>
+        <div className={styles.waitContainer}>
           <Wait />
         </div>
       );
@@ -47,7 +47,7 @@ class BlogPost extends Component {
     if (this.state.postInfoLoaded){
       return (
         <section className={styles.post}>
-          <div className={styles["post-title"]}>{this.state.postInfo.title}</div>
+          <div className={styles.postTitle}>{this.state.postInfo.title}</div>
           <article className={styles.content} dangerouslySetInnerHTML={{__html: this.state.postInfo.html}}></article>
         </section>
       );

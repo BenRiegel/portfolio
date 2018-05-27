@@ -62,21 +62,21 @@ class Blog extends Component {
   renderBlogLink(index, post){
     if (!this.state.filter || post.tags.includes(this.state.filter)){
       return (
-        <div className={styles["blog-link"]} key={index}>
-          <Link className={styles["post-title"]} to={`/blog/posts/${post.id}`}>
+        <div className={styles.blogLink} key={index}>
+          <Link className={styles.postTitle} to={`/blog/posts/${post.id}`}>
             {post.title}
           </Link>
-          <div className={styles["info-div"]}>
+          <div className={styles.infoDiv}>
             <span>{post.datePublished}</span>
             <span>By Ben Riegel</span>
             { post.tags.map( (tag, index) =>
               this.renderTag(index, tag)
             )}
           </div>
-          <div className={styles["post-summary"]}>
+          <div className={styles.postSummary}>
             {post.summary}
           </div>
-          <Link className={styles["read-more-link"]} to={`/blog/posts/${post.id}`}>Read More »</Link>
+          <Link className={styles.readMoreLink} to={`/blog/posts/${post.id}`}>Read More »</Link>
         </div>
       );
     }
@@ -87,10 +87,10 @@ class Blog extends Component {
     if (this.state.postsLoaded){
       return (
         <div>
-          <section className={styles["tags-list-section"]}>
+          <section className={styles.tagsListSection}>
             <TagsList tagsList={TAGS_LIST} posts={this.state.posts}  />
           </section>
-          <section className={styles["blog-links-section"]}>
+          <section className={styles.blogLinksSection}>
             {this.state.posts.map( (post, index) =>
               this.renderBlogLink(index, post))
             }
@@ -103,7 +103,7 @@ class Blog extends Component {
   renderWaitingAnimation(){
     if (!this.state.postsLoaded){
       return (
-        <div className={styles['wait-container']}>
+        <div className={styles.waitContainer}>
           <Wait />
         </div>
       );

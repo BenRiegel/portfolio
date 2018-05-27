@@ -4,7 +4,6 @@ import Wait from './Wait.js';
 import styles from '../stylesheets/FieldsSection.scss';
 
 
-
 const FieldsSection = ( {children, hasRequiredFields, waiting} ) => {
 
   //private functions ----------------------------------------------------------

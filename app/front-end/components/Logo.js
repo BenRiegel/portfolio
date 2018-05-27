@@ -9,9 +9,9 @@ const Logo = () => {
       <div className={styles.name}>Ben Riegel</div>
       <div className={styles.title}>Full-Stack Developer & JavaScript Engineer</div>
       <div className={styles.logo}>
-        <div className={styles["logo-layer"]}></div>
-        <div className={styles["logo-layer"]}></div>
-        <div className={styles["logo-layer"]}></div>
+        <div className={styles.logoLayer}></div>
+        <div className={styles.logoLayer}></div>
+        <div className={styles.logoLayer}></div>
       </div>
     </Link>
   );

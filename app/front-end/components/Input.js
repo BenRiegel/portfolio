@@ -41,7 +41,7 @@ const Input = ( {type, className, value, onChange, label} ) => {
       return null;
   }
 
-}
+};
 
 
 export default Input;

@@ -1,6 +1,6 @@
 @import 'Vars.scss';
 
-.nav-link{
+.navLink{
   display: inline-block;
   position: relative;
   margin: 6px 0;        /*prob don't need both */
@@ -11,7 +11,7 @@
   text-decoration: none;
 }
 
-.nav-link.selected::after {
+.navLink.selected::after {
   content: " ";
   position: absolute;
   left:50%;
