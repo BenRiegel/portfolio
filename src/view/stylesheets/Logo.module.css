@@ -1,0 +1,90 @@
+
+
+.container{
+  display:flex;
+  align-items: center;
+/*  color:white;*/
+  font-size:14px;
+/*  margin-left:50px;*/
+}
+
+.name{
+/*  color:white;*/
+  color:black;
+  font-size: 24px;
+  font-weight: 450;
+  margin-bottom: 2px;
+  text-decoration: none;
+}
+
+.title{
+  font-size: 18px;
+  margin-bottom: 0px;
+/*  color:#404040;*/
+  font-weight: 450;
+  color:#404040;
+}
+
+.logo{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width:40px;
+  height:40px;
+  /*width: 34px;
+  height: 40px;
+  background-image: url('./hex.svg');
+  background-repeat: no-repeat;
+  background-size: 34px 40px;*/
+  background-color:black;
+
+}
+
+.logoText{
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  /*color: $theme-color-yellow;*/
+  color:white;
+  letter-spacing: 1px;
+  background-color: black;
+  width:28px;
+  height:28px;
+  line-height: 28px;
+  border-radius: 50%;
+
+}
+
+
+.nameContainer{
+  margin-left: 15px;
+  display:flex;
+  flex-direction: column;
+}
+
+/*.logoLayer{
+    max-height: 34px;
+    max-width: 42px;
+    background-image: url('./hex.svg');
+    background-size: 30px 17px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+  position:absolute;
+  top:2px;
+  left:6px;
+  width:30px;
+  height:30px;
+  background: linear-gradient(to bottom right, #999, #eee);
+  transform: rotateX(67deg) rotateZ(45deg);
+  z-index: 2;
+}*/
+/*
+.logoLayer:first-child{
+  top:-6px;
+  z-index: 3;
+}
+
+.logoLayer:last-child{
+  top:10px;
+  z-index: 1;
+}
+*/

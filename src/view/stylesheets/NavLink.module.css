@@ -1,0 +1,36 @@
+/*@import 'Vars.scss';*/
+
+.navLink{
+  padding: 4px 0px;
+  margin-right: 30px;
+  font-size: 18px;
+/*  font-weight: 600;
+  color:#666666;*/
+  font-weight: 450;
+  color:#404040;
+/*  color: white;*/
+  /*text-transform: uppercase;*/
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.navLink:last-child {
+  margin-right: 0px;
+}
+
+
+.navLink.selected{
+  border-bottom: 2px solid #666666;
+
+}
+
+/*.navLink.selected::after {
+  content: " ";
+  position: absolute;
+  left:50%;
+  top: 28px;
+  width: 27px;
+  height: 27px;
+  background-color: white;
+  transform: translate(-50%, 0%) rotateY(30deg) rotateZ(45deg);
+}*/

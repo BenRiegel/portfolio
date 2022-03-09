@@ -1,0 +1,16 @@
+.blogEntry{
+  display: flex;
+  flex-direction: row;
+  margin-top:10px;
+}
+
+.blogDate{
+  display:flex;
+  justify-content:right;
+  margin-left: 10px;
+  width: 60px;
+}
+
+.blogLink{
+  margin-left:25px;
+}
