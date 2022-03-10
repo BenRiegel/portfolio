@@ -3,14 +3,12 @@
 .container{
   display:flex;
   align-items: center;
-/*  color:white;*/
   font-size:14px;
-/*  margin-left:50px;*/
+  flex-grow:1;
 }
 
 .name{
-/*  color:white;*/
-  color:black;
+  color: #202020;
   font-size: 24px;
   font-weight: 450;
   margin-bottom: 2px;
@@ -20,24 +18,18 @@
 .title{
   font-size: 18px;
   margin-bottom: 0px;
-/*  color:#404040;*/
-  font-weight: 450;
-  color:#404040;
+  color:#596979;
+  font-weight:500;
 }
 
 .logo{
   display:flex;
   justify-content: center;
   align-items: center;
-  width:40px;
-  height:40px;
-  /*width: 34px;
-  height: 40px;
-  background-image: url('./hex.svg');
-  background-repeat: no-repeat;
-  background-size: 34px 40px;*/
-  background-color:black;
-
+  width:64px;
+  height:64px;
+  border-radius: 50%;
+  background-image: url('../assets/me.png');
 }
 
 .logoText{
