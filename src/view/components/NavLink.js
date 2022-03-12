@@ -1,10 +1,13 @@
+//----- imports ----------------------------------------------------------------
+
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styles from '../stylesheets/NavLink.module.css';
 
 
+//----- export code block ------------------------------------------------------
 
-const NavLink = function(props){
+export default function NavLink(props){
 
   const location = useLocation();
   const currentPath = location.pathname;
@@ -14,10 +17,11 @@ const NavLink = function(props){
   const classNamesStr = `${selectedClass} ${styles.navLink}`;
 
   return (
-    <Link to={props.linkToPath} className={classNamesStr}>
-      {props.text}
-    </Link>
+    <li className={classNamesStr}>
+      <Link to={props.linkToPath}>
+        {props.text}
+      </Link>
+    </li>
   );
+  
 };
-
-export default NavLink;

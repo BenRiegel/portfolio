@@ -1,13 +1,23 @@
-import React from 'react';
-//import styles from '../stylesheets/Home.module.css';
+//----- imports ----------------------------------------------------------------
+
+import React, { useState, useEffect } from 'react';
+import Md from './Md.js';
+import { getPage } from '../../services/md.js';
 
 
-const Home = function(){
+//----- export code block ------------------------------------------------------
+
+export default function Home(){
+
+  const [mdText, setMdText] = useState('');
+
+  useEffect( () => {
+    getPage('home').then( text => {
+      setMdText(text);
+    });
+  });
+
   return (
-    <>
-      What's New
-    </>
+    <Md mdText={mdText}></Md>
   );
 };
-
-export default Home;

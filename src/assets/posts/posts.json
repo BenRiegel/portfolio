@@ -1,0 +1,64 @@
+[
+
+  {
+    "date": "March 10, 2022",
+    "title": "This Website",
+    "name": "portfolio"
+  },
+
+  {
+    "date": "March 10, 2022",
+    "title": "Select Menu Project, Part 3",
+    "name": "select-menu-part-3"
+  },
+
+  {
+    "date": "March 10, 2022",
+    "title": "Select Menu Project, Part 2",
+    "name": "select-menu-part-2"
+  },
+
+  {
+    "date": "March 10, 2022",
+    "title": "Select Menu Project, Part 1",
+    "name": "select-menu-part-1"
+  },
+
+  {
+    "date": "March 5, 2019",
+    "title": "PGE Project, Part 3",
+    "name": "pge-3"
+  },
+
+  {
+    "date": "Feb 5, 2019",
+    "title": "PGE Project, Part 2",
+    "name": "pge-2"
+  },
+
+  {
+    "date": "Jan 5, 2019",
+    "title": "PGE Project, Part 1",
+    "name": "pge-1"
+  },
+
+  {
+    "date": "June 4, 2018",
+    "title": "Understanding Web Maps, Part 3",
+    "name": "understanding-web-maps-part-3"
+  },
+
+  {
+    "date": "June 4, 2018",
+    "title": "Understanding Web Maps, Part 2",
+    "name": "understanding-web-maps-part-2"
+  },
+
+  {
+    "date": "June 4, 2018",
+    "title": "Understanding Web Maps, Part 1",
+    "name": "understanding-web-maps-part-1",
+    "description": "Welcome to part one of my three part series on web maps. My goal in this series is to explain, at a high level, how web maps work. In particular, I will attempt to shed light on how web maps are able to convert geographic locations (e.g. the lat/long of a particular restaurant) into positions within a viewport (an HTML DOM element) and how they are able to update these positions when a user zooms or pans the web map."
+  }
+
+]

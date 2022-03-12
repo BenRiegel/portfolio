@@ -1,14 +1,12 @@
 /*@import 'Vars.scss';*/
 
-.nav{
-  display:flex;
-  margin: 15px 0 5px 0;
+.nav {
+  display: flex;
+  margin: 10px 0;
 }
 
-
-
-@media only screen and (min-width: 600px) {
-  .nav{
+@media only screen and (min-width: 650px) {
+  .nav {
     margin: 0;
   }
 }

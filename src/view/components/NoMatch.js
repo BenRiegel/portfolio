@@ -1,11 +1,13 @@
+//----- imports ----------------------------------------------------------------
+
 import React from 'react';
 //import styles from '../stylesheets/NoMatch.module.css';
 
 
-const NoMatch = function(){
+//----- export code block ------------------------------------------------------
+
+export default function NoMatch(){
   return (
     <div>Error 404</div>
   );
 };
-
-export default NoMatch;

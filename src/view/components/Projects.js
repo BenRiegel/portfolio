@@ -1,13 +1,24 @@
-import React from 'react';
-//import styles from '../stylesheets/Projects.module.css';
+//----- imports ----------------------------------------------------------------
+
+import React, { useState, useEffect } from 'react';
+import Md from './Md.js';
+import { getPage } from '../../services/md.js';
 
 
-const Projects = function(){
+//----- export code block ------------------------------------------------------
+
+export default function Projects(){
+
+  const [mdText, setMdText] = useState('');
+
+  useEffect( () => {
+    getPage('projects').then( text => {
+      setMdText(text);
+    });
+  });
+
   return (
-    <>
-      Project info goes here
-    </>
+    <Md mdText={mdText}></Md>
   );
-};
 
-export default Projects;
+};

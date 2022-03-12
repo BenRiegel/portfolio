@@ -1,13 +1,17 @@
+//----- imports ----------------------------------------------------------------
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../stylesheets/Logo.module.css';
 
 
-const Logo = function(){
+//----- export code block ------------------------------------------------------
+
+export default function Logo(){
   return (
     <div className={styles.container}>
       <Link to='/'>
-        <div className={styles.logo}></div>
+        <div className={styles.pic}></div>
       </Link>
       <div className={styles.nameContainer}>
         <Link to='/' className={styles.name}>Ben Riegel</Link>
@@ -16,5 +20,3 @@ const Logo = function(){
     </div>
   );
 };
-
-export default Logo;

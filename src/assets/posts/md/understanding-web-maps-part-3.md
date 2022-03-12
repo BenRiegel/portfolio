@@ -1,6 +1,6 @@
 # Understanding Web Maps, Part 3
 
-In the last post I discussed the concept of scale and how certain scale values are important in web maps. In this post, I'll discuss how the concept of the web map viewpoint and how knowing the map viewpoint can help us position objects in the web map.
+In the [last post](understanding-web-maps-part-2) I discussed the concept of scale and how certain scale values are important in web maps. In this post, I'll discuss how the concept of the web map viewpoint and how knowing the map viewpoint can help us position objects in the web map.
 
 When we zoom in an out in a web map, what's going on is that we are shifting the map from one predefined scale level to another. If we are initially at scale level 2, for instance, zooming in will shift to scale level 3. Recall from the previous post that at high scale levels, maps of the whole Earth are quite large (65,536 pixels in length and width at scale level 8). It is not feasible for web maps to display the whole Earth at the highest scale levels. It would require transferring too much data, and also few have people have devices with screens large enough to display tens of thousands of pixels. Instead, web maps typically display only a subset of the entire Earth at a time.
 
@@ -27,3 +27,5 @@ const mapScaleLevels = {
 The third step is to determine the pixel values of locations in the viewport. The size of the web map viewport on a webpage is usually constant. Let's say that the web map viewport is 1024 pixels in width and 768 pixels in height. The viewpoint center will be at pixel (512, 384). Thus our marked value will be positioned at pixel (430, 302).
 
 Conceptually, this is how we determine the pixel value locations of objects in a web map. Things get more complicated when the map becomes interactive. Panning moves the viewpoint center and zooming changes the scale level. However, as long as we know the viewpoint center of the map and the scale value, we can figure out how to place any object on a web map.
+
+This concludes this series on web maps. We learned how it's possible to convert ordinary lat longs to Web Mercator coordinates. We also learned about scale and how certain scale values make it easier to render basemaps in a web map viewport. Finally, we discussed the concept of a web map viewpoint and how it's possible to convert Web Mercator locations to web map viewport locations using the current scale value and the viewpoint of the web map. These are the foundational concepts that underly the operator of web maps.

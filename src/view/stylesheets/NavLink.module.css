@@ -1,34 +1,25 @@
-/*@import 'Vars.scss';*/
-
-.navLink{
+.navLink {
   padding: 4px 0px;
   margin-right: 35px;
-  font-size: 18px;
-  font-weight: 450;
-/*  color:#404040;*/
-  color:#596979;
-  text-decoration: none;
   border-bottom: 2px solid transparent;
+  list-style-type: none;
 }
 
 .navLink:last-child {
   margin-right: 0px;
 }
 
-
-.navLink.selected{
-  color: #202020;
-  border-bottom: 2px solid #202020;
-
+.navLink a {
+  color: #596979;
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-decoration: none;
 }
 
-/*.navLink.selected::after {
-  content: " ";
-  position: absolute;
-  left:50%;
-  top: 28px;
-  width: 27px;
-  height: 27px;
-  background-color: white;
-  transform: translate(-50%, 0%) rotateY(30deg) rotateZ(45deg);
-}*/
+.navLink.selected {
+  border-bottom: 2px solid #202020;  /*don't know about this */
+}
+
+.navLink.selected a {
+  color: #202020;
+}
