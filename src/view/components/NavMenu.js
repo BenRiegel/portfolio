@@ -8,6 +8,7 @@ import styles from '../stylesheets/NavMenu.module.css';
 //----- export code block ------------------------------------------------------
 
 export default function NavMenu(){
+
   return (
     <ul className={styles.nav}>
       <NavLink linkToPath='/' text='Home' sectionName='home'/>

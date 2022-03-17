@@ -30,8 +30,8 @@ export default function App() {
             <Route exact path="/projects" element={<Projects />} />
             <Route exact path="/blog" element={<Blog />} />
             <Route path="/blog/:postId" element={<BlogPost />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route element={<NoMatch />} />
+            <Route exact path="/contact" element={<Contact />} />
+            <Route path="*" element={<NoMatch />} />
           </Routes>
         </div>
       </Router>

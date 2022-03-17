@@ -9,21 +9,20 @@ import styles from '../stylesheets/BlogEntry.module.css';
 
 export default function BlogEntry(props){
 
-  const {date, name, title, description} = props.post;
-
   return (
     <div className={styles.entry}>
-      <Link to={`/blog/${name}`} className={styles.title}>
-        {title}
+      <Link to={`/blog/${props.post.name}`} className={styles.title}>
+        <h2>{props.post.title}</h2>
       </Link>
-      <div className={styles.date}> {date} </div>
-      <div className={styles.summary}>
-        {description}
-        {' '}
-        <Link to={`/blog/${name}`}>
+      <p className={styles.date}>
+        {props.post.date}
+      </p>
+      <p className={styles.summary}>
+        {props.post.description}
+        <Link to={`/blog/${props.post.name}`}>
           {'Read More'}
         </Link>
-      </div>
+      </p>
     </div>
   );
 };

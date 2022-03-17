@@ -1,64 +1,80 @@
 [
 
   {
-    "date": "March 10, 2022",
-    "title": "This Website",
-    "name": "portfolio"
+    "date": "March 12, 2022",
+    "title": "Developing My Professional Website",
+    "name": "portfolio",
+    "description": "In this post, I discuss how I created my professional website, the one that you're currently visiting!"
   },
 
   {
-    "date": "March 10, 2022",
+    "date": "January 10, 2022",
     "title": "Select Menu Project, Part 3",
-    "name": "select-menu-part-3"
+    "name": "select-menu-part-3",
+    "description": "Part three of this post compares two different implementations of the select menu: one created using vanilla JS and one created using React. I discuss how the differences between the two are relatively minor."
   },
 
   {
-    "date": "March 10, 2022",
+    "date": "January 10, 2022",
     "title": "Select Menu Project, Part 2",
-    "name": "select-menu-part-2"
+    "name": "select-menu-part-2",
+    "description": "This post focuses on my approach for overcoming the two technical challenges associated with developing an animating select menu."
   },
 
   {
-    "date": "March 10, 2022",
+    "date": "January 10, 2022",
     "title": "Select Menu Project, Part 1",
-    "name": "select-menu-part-1"
+    "name": "select-menu-part-1",
+    "description": "This is part one of a three-part series on developing an animating select menu. I provide an overview of the project and discuss two technical challenges that arise when incorporating animations into the select menu."
   },
 
   {
-    "date": "March 5, 2019",
+    "date": "Jan 5, 2020",
+    "title": "'Var', 'let', 'const', and the future of JavaScript",
+    "name": "var-let-const",
+    "description": "In this post, I explain the differences between the keywords 'var', 'let', and 'const'. I also discuss when I think it's most appropriate to use them."
+  },
+
+  {
+    "date": "Sept 23, 2019",
     "title": "PGE Project, Part 3",
-    "name": "pge-3"
+    "name": "pge-3",
+    "description": "In this final post of this series, I provide some reflections on my experience developing the PGE Project website. I discuss what I learned and why, overall, it was a tremendous learning experience."
   },
 
   {
-    "date": "Feb 5, 2019",
+    "date": "Sept 23, 2019",
     "title": "PGE Project, Part 2",
-    "name": "pge-2"
+    "name": "pge-2",
+    "description": "The second part of this series focuses on the implementation of the PGE Project website. I discuss the three major technical challenges and how I was able to overcome them."
   },
 
   {
-    "date": "Jan 5, 2019",
+    "date": "Sept 23, 2019",
     "title": "PGE Project, Part 1",
-    "name": "pge-1"
+    "name": "pge-1",
+    "description": "Part one of a three-part case study of the PGE Project website, which I created in 2018. It provides an overview of the project itself and the goals for the website."
   },
 
   {
-    "date": "June 4, 2018",
+    "date": "February 4, 2018",
     "title": "Understanding Web Maps, Part 3",
-    "name": "understanding-web-maps-part-3"
+    "name": "understanding-web-maps-part-3",
+    "description": "The final part of this series focuses on the concept of a map viewpoint. I discuss how it's possible to position features within a web map viewport using the map's scale value and viewpoint."
   },
 
   {
-    "date": "June 4, 2018",
+    "date": "February 4, 2018",
     "title": "Understanding Web Maps, Part 2",
-    "name": "understanding-web-maps-part-2"
+    "name": "understanding-web-maps-part-2",
+    "description": "In part two of this series, I discuss the concept of scale and why certain scale values can make the task of rendering basemaps easier."
   },
 
   {
-    "date": "June 4, 2018",
+    "date": "February 4, 2018",
     "title": "Understanding Web Maps, Part 1",
     "name": "understanding-web-maps-part-1",
-    "description": "Welcome to part one of my three part series on web maps. My goal in this series is to explain, at a high level, how web maps work. In particular, I will attempt to shed light on how web maps are able to convert geographic locations (e.g. the lat/long of a particular restaurant) into positions within a viewport (an HTML DOM element) and how they are able to update these positions when a user zooms or pans the web map."
+    "description": "Part one of a three-part series on how web maps work. This post focuses on the Web Mercator coordinate system and why it is a popular coordinate system in web map applications."
   }
 
 ]

@@ -8,6 +8,7 @@ import styles from '../stylesheets/Logo.module.css';
 //----- export code block ------------------------------------------------------
 
 export default function Logo(){
+
   return (
     <div className={styles.container}>
       <Link to='/'>

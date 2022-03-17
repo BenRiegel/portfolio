@@ -1,11 +1,9 @@
-/*@import 'Vars.scss';*/
-
 .nav {
   display: flex;
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 700px) {
   .nav {
     margin: 0;
   }

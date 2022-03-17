@@ -1,5 +1,0 @@
-# About Me
-
-# Projects
-
-# Blog

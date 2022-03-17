@@ -11,15 +11,15 @@
 
 .navLink a {
   color: #596979;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 500;
   text-decoration: none;
 }
 
 .navLink.selected {
-  border-bottom: 2px solid #202020;  /*don't know about this */
+  border-bottom: 2px solid #202020;
 }
 
 .navLink.selected a {
-  color: #202020;
+  color: inherit;
 }

@@ -1,0 +1,40 @@
+.projectContainer{
+  border-bottom: 1px solid #dddddd;
+  padding: 20px 0;
+}
+
+.projectContainer h2{
+  margin-bottom: 5px;
+}
+
+.projectContainer ul{
+  margin-left: 22px;
+}
+
+.projectContainer img{
+  width: 350px;
+}
+
+.infoContainer{
+  display:flex;
+  flex-direction: column-reverse;
+}
+
+.infoContainer img{
+  margin-left: 0px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.infoContainer a{
+  color: inherit;
+}
+
+@media only screen and (min-width: 700px) {
+  .infoContainer{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .infoContainer img{
+    margin-left: 20px;
+  }
+}

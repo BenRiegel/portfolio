@@ -1,7 +1,12 @@
+//----- imports ----------------------------------------------------------------
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './view/stylesheets/index.css';
 import App from './view/components/App.js';
+import './view/stylesheets/index.css';
+
+
+//----- module code block ------------------------------------------------------
 
 ReactDOM.render(
   <React.StrictMode>
