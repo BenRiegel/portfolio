@@ -29,6 +29,13 @@
   },
 
   {
+    "date": "May 12, 2020",
+    "title": "JavaScript 'this', explained",
+    "name": "this",
+    "description": "This post outlines out the 'this' identifier works in Javascript. I explain how the use of 'this' in the global scope, the four ways 'this' can become bound in functions, and how it can become unbound. Finally, I discuss how 'this' works in ES6 arrow functions."
+  },
+
+  {
     "date": "Jan 5, 2020",
     "title": "'Var', 'let', 'const', and the future of JavaScript",
     "name": "var-let-const",
