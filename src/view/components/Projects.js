@@ -16,6 +16,26 @@ export default function Projects(){
 
       <div className={styles.projectContainer}>
         <h2>
+          Minesweeper
+        </h2>
+        <div className={styles.infoContainer}>
+          <ul>
+            <li>
+              See it <a href='https://minesweeper-riegel.netlify.app/'>live</a>
+            </li>
+            <li>
+              Read about this project on my <a href='../blog/minesweeper'>blog</a>
+            </li>
+            <li>
+              View source code on <a href='https://github.com/BenRiegel/minesweeper'>GitHub</a>
+            </li>
+          </ul>
+          <img src="./images/minesweeper.png" alt="Minesweeper game"></img>
+        </div>
+      </div>
+
+      <div className={styles.projectContainer}>
+        <h2>
           My Professional Website
         </h2>
         <div className={styles.infoContainer}>

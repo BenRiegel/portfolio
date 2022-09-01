@@ -1,6 +1,20 @@
 [
 
   {
+    "date": "September 1, 2022",
+    "title": "Select Menu in React, Updated",
+    "name": "select-menu-react-new",
+    "description": "This post describes a recent update to the animating select menu that I previously created using React."
+  },
+
+  {
+    "date": "August 5, 2022",
+    "title": "Minesweeper Game",
+    "name": "minesweeper",
+    "description": "This blog posts describes my version of the game Minesweeper, which I developed using React."
+  },
+
+  {
     "date": "March 12, 2022",
     "title": "Developing My Professional Website",
     "name": "portfolio",
