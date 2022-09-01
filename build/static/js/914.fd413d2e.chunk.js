@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[914],{914:function(e,a,o){e.exports=o.p+"static/media/pge-2.a2d921aae36631f7f99a.md"}}]);

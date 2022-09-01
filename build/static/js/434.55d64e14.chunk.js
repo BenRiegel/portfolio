@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[434],{6434:function(a,e,t){a.exports=t.p+"static/media/understanding-web-maps-part-1.3849fa7a28d45fb69eac.md"}}]);

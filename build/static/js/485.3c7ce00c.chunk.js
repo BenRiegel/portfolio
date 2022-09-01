@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[485],{2485:function(e,t,c){e.exports=c.p+"static/media/select-menu-part-3.9618729ff05bcdb8c370.md"}}]);
