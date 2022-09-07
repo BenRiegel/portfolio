@@ -43,6 +43,13 @@
   },
 
   {
+    "date": "Feb 4, 2021",
+    "title": "What is a closure in JavaScript?",
+    "name": "closure",
+    "description": "In this post, I explain the concept of closure and why it's important in JavaScript."
+  },
+
+  {
     "date": "May 12, 2020",
     "title": "JavaScript 'this', explained",
     "name": "this",
